@@ -26,8 +26,8 @@ environment = """
   USER_GID = 1000
 
   ## Configure custom ports
-	HTTP_PORT = 3000
-	SSH_PORT = 222
+  HTTP_PORT = 3000
+  SSH_PORT = 222
 
   ## Volumes - Optional - Defaults using docker volumes
   # GITEA_DATA_PATH = /path/to/gitea/data
