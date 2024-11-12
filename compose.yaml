@@ -23,7 +23,7 @@ services:
     depends_on:
       - db
 
-  db:
+  database:
     image: postgres:${POSTGRES_TAG:-14}
     restart: ${RESTART:-unless-stopped}
     logging:
