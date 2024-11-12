@@ -13,17 +13,9 @@ https://docs.gitea.com/installation/install-with-docker#postgresql-database
 name = "gitea"
 [stack.config]
 repo = "komodo-hub/deploy-gitea"
-file_paths = [
-  "compose.yaml",
-  # "caddy.compose.yaml" # Deploy https proxy
-]
 environment = """
-  ## Container options
+  ## https://hub.docker.com/r/gitea/gitea/tags
   GITEA_TAG = 1
-  RESTART = unless-stopped
-  LOGGING_DRIVER = local
-  USER_UID = 1000
-  USER_GID = 1000
 
   ## Configure custom ports
   HTTP_PORT = 3000
@@ -38,14 +30,15 @@ environment = """
   POSTGRES_USER = gitea
   POSTGRES_DB = gitea
 
-  ## Required for Caddy deploy
-  GITEA_DOMAIN = gitea.example.com
-  CADDY_TAG = latest
+  ## Container options
+  RESTART = unless-stopped
+  LOGGING_DRIVER = local
+  USER_UID = 1000
+  USER_GID = 1000
 """
 
 [[variable]]
 name = "GITEA_POSTGRES_PASSWORD"
 value = "your_postgres_password"
-is_secret = true
 ```
 
