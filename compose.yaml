@@ -20,7 +20,7 @@ services:
       GITEA__database__USER: ${POSTGRES_USER:-gitea}
       GITEA__database__PASSWD: ${POSTGRES_PASSWORD:-gitea}
     depends_on:
-      - db
+      - database
 
   database:
     image: postgres:${POSTGRES_TAG:-14}
