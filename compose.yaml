@@ -12,9 +12,8 @@ services:
       - ${GITEA_DATA_PATH:-server-data}:/data
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
+    env_file: .env
     environment:
-      USER_UID: ${USER_UID:-1000}
-      USER_GID: ${USER_GID:-1000}
       GITEA__database__DB_TYPE: postgres
       GITEA__database__HOST: db:5432
       GITEA__database__NAME: ${POSTGRES_DB:-gitea}

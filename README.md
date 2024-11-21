@@ -30,6 +30,9 @@ environment = """
   POSTGRES_USER = gitea
   POSTGRES_DB = gitea
 
+  ## Pass Gitea environment
+  # GITEA__service__DISABLE_REGISTRATION=true
+
   ## Container options
   RESTART = unless-stopped
   LOGGING_DRIVER = local
